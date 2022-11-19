@@ -50,3 +50,5 @@ const playerMaker = (name:string) : Player => ({name});
 
 const noage = makePlayer("kdd");
 noage.age = 12;
+
+
