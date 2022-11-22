@@ -8,7 +8,7 @@ type Add = (a: number, b: number) => number;
 const add: Add = (a, b) => a + b;
 
 
-// 다형성(polymorphism) = 오버로딩
+// 다형성 1 - 오버로딩
 // 자바의 그거랑 비슷함. 오버로딩은 같은 이름의 함수를 인자만 다르게 작성할 수 있던 그 기능임.
 // 단, TS 에서는 타입을 지정할 때 이하와 같이 사용할 뿐.
 type Add2 = { // 한 타입이 여러 시그니쳐 타입을 가질 수 있음.
