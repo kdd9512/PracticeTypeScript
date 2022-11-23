@@ -3,15 +3,23 @@
 // 이럴 때에는 제네릭을 활용하여 일종의 가변 인자를 받아 TS 가 알아서 해당 타입으로 변환하여
 // 시그니처 타입을 만든다.
 // <T> 부분이 제네릭이다. 이 부분에 값이 들어오면 자동으로 값의 타입을 인지하고 그 값으로 변형된다.
-type arr = {
+type arr = <T>(arr: T[]) => T
 
-    <T>(arr: T[]): T
-}
+// 한 개 이상의 인자를 받는다면 그에 맞게 이하와 같이 제네릭의 숫자도 늘리면 된다.
+type arr2 = <T, V>(val1: T[], val2: V) => T
 
 // 배열의 첫 번째 값을 return.
 const Print: arr = (arr) => arr[0]
+const Print2: arr2 = (arr) => arr[0]
 
-const a = Print([1,2,3,4])
-const b = Print(["a","b","c"])
-const c = Print([true,true,false,false])
-const d = Print([true,2,"asdf",false])
+const a = Print([1, 2, 3, 4])
+const b = Print(["a", "b", "c"])
+const c = Print([true, true, false, false])
+const d = Print([true, 2, "asdf", false])
+
+const e = Print2([1,2,3,"a",true], false)
+
+
+
+
+
