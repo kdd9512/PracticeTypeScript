@@ -18,12 +18,14 @@ class Dict {
     def(term:string) {
         return this.words[term]
     }
+
 }
 
 class Word {
     constructor(
-        public term: string,
-        public def: string
+        // readonly: 외부에서 수정을 불가능하게 막는다.
+        public readonly term: string,
+        public readonly def: string
     ) {}
 }
 
