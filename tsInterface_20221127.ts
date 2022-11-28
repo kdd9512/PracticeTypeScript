@@ -28,3 +28,11 @@ interface Player1 extends User{ }
 // type 의 경우 특정 type 이나 interface 를 상속한다면 이하처럼 쓰는 것도 가능하다.
 type Player2 = User & {}
 
+abstract class User2 {
+    constructor(
+        protected fname:string,
+        protected lname:string
+    ) {}
+    abstract sayHi(name:string) :string
+    abstract fullName():string
+}
